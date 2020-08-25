@@ -165,12 +165,12 @@ class Mitsubishi:
         self.log_level = log_level
         self.gpio_pin = gpio_pin
 
-    def power_off(self):
+    def power_off(self, climate_mode):
         """
         power_off
         """
         self.__send_command(
-            ClimateMode.Auto,
+            climate_mode,  #CJS Allow pass in of mode as off doesn't work on ours in when set to auto #ClimateMode.Auto,
             21,
             FanMode.Auto,
             VanneVerticalMode.Auto,
